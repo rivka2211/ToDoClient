@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const apiUrl = "https://localhost:5177"
+const apiUrl = process.env.REACT_APP_API_URL;
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
