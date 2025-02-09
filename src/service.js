@@ -10,7 +10,7 @@ export default {
       return result.data;
     } catch (error) {
       console.error("Error fetching tasks:", error);
-      // throw error; // או החזר ערך ריק או שגיאה מותאמת
+      return [];// throw error; // או החזר ערך ריק או שגיאה מותאמת
     }
   },
 
@@ -21,6 +21,7 @@ export default {
       return response.data;
     } catch (error) {
       console.error("Error adding task:", error);
+      return {};
       // throw error;
     }
   },
@@ -30,16 +31,18 @@ export default {
       return response.data; // מחזיר תשובה מתאימה
     } catch (error) {
       console.error("Error updating task completion:", error);
-      // throw error; // טיפול בשגיאה
+       throw error; // טיפול בשגיאה
     }
   },
   deleteTask: async (id) => {
     try {
       await axios.delete(`${apiUrl}/items/${id}`);
       console.log(`Task with id ${id} deleted`); // הודעה על מחיקה
+      return {};
     } catch (error) {
       console.error("Error deleting task:", error);
       // throw error; // טיפול בשגיאה
+      return {};
     }
   },
   
