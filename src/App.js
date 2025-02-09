@@ -47,7 +47,7 @@ function App() {
                 <div className="view">
                   <input className="toggle" type="checkbox" defaultChecked={todo.isComplete} onChange={(e) => updateCompleted(todo, e.target.checked)} />
                   <label>{todo.name}</label>
-                  <button className="destroy" onClick={() => deleteTodo(todo.id)}>rivki</button>
+                  <button className="destroy" onClick={() => deleteTodo(todo.id)}></button>
                 </div>
               </li>
             );
