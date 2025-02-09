@@ -2,7 +2,6 @@ import axios from 'axios';
 
 const apiUrl = process.env.REACT_APP_API_URL;
 
-// eslint-disable-next-line import/no-anonymous-default-export
 
 export default {
   getTasks: async () => {
@@ -18,7 +17,7 @@ export default {
   addTask: async (name) => {
     console.log('addTask', name)
     try {
-      const response = await axios.post(`${apiUrl}/items`, { name });
+      const response = await axios.post(`https://todolist-4dry.onrender.com/items`, { name });
       return response.data;
     } catch (error) {
       console.error("Error adding task:", error);
@@ -28,7 +27,7 @@ export default {
   },
   setCompleted: async (id, isComplete) => {
     try {
-      const response = await axios.put(`${apiUrl}/items/${id}`, { iscomplete: isComplete });
+      const response = await axios.put(`https://todolist-4dry.onrender.com/items/${id}`, { iscomplete: isComplete });
       return response.data; // מחזיר תשובה מתאימה
     } catch (error) {
       console.error("Error updating task completion:", error);
@@ -37,7 +36,7 @@ export default {
   },
   deleteTask: async (id) => {
     try {
-      await axios.delete(`${apiUrl}/items/${id}`);
+      await axios.delete(`https://todolist-4dry.onrender.com/items/${id}`);
       console.log(`Task with id ${id} deleted`); // הודעה על מחיקה
       return {};
     } catch (error) {
