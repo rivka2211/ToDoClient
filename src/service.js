@@ -7,7 +7,7 @@ const apiUrl = process.env.REACT_APP_API_URL;
 export default {
   getTasks: async () => {
     try {
-      const result = await axios.get(`${apiUrl}/items`);
+      const result = await axios.get("https://todolist-4dry.onrender.com/items");
       return result.data;
     } catch (error) {
       console.error("Error fetching tasks:", error);
