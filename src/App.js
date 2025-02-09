@@ -3,7 +3,7 @@ import service from './service.js';
 
 function App() {
   const [newTodo, setNewTodo] = useState("");
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState([{ id: 1, name: "Learn React", isComplete: false }]);
 
   async function getTodos() {
     const todos = await service.getTasks();
@@ -41,13 +41,13 @@ function App() {
       </header>
       <section className="main" style={{ display: "block" }}>
         <ul className="todo-list">
-          {todos.map(todo => {
+          {todos.map((todo) => {
             return (
-              <li className={todo.isComplete ? "completed" : ""} key={todo.id}>
+              <li  className={todo.isComplete ? "completed" : ""} key={todo.id}>
                 <div className="view">
                   <input className="toggle" type="checkbox" defaultChecked={todo.isComplete} onChange={(e) => updateCompleted(todo, e.target.checked)} />
                   <label>{todo.name}</label>
-                  <button className="destroy" onClick={() => deleteTodo(todo.id)}></button>
+                  <button className="destroy" onClick={() => deleteTodo(todo.id)}>rivki</button>
                 </div>
               </li>
             );
