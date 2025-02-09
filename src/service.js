@@ -3,6 +3,7 @@ import axios from 'axios';
 const apiUrl = process.env.REACT_APP_API_URL;
 
 // eslint-disable-next-line import/no-anonymous-default-export
+
 export default {
   getTasks: async () => {
     try {
@@ -10,7 +11,7 @@ export default {
       return result.data;
     } catch (error) {
       console.error("Error fetching tasks:", error);
-      return [];// throw error; // או החזר ערך ריק או שגיאה מותאמת
+      return [];
     }
   },
 
